@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Daily Care Unit - HCL</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    padding:15px;
+    background:#eef2f7;
+    font-family:Bahnschrift, sans-serif;
+    color:#16324f;
+}
+
+.container{
+    max-width:850px;
+    margin:auto;
+    background:#fff;
+    border-radius:18px;
+    padding:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.logo{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.logo img{
+    width:260px;
+    max-width:100%;
+    height:auto;
+    object-fit:contain;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:25px;
+    font-size:28px;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid #cfd8e3;
+    margin-top:6px;
+    font-size:15px;
+    background:#fff;
+}
+
+textarea{
+    resize:vertical;
+}
+
+.table-wrapper{
+    overflow-x:auto;
+    margin-top:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:400px;
+}
+
+th{
+    background:#16324f;
+    color:white;
+}
+
+th, td{
+    border:1px solid #d6dce5;
+    padding:10px;
+    font-size:14px;
+}
+
+button{
+    width:100%;
+    border:none;
+    padding:15px;
+    border-radius:12px;
+    margin-top:25px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn-wa{
+    background:#25D366;
+    color:white;
+}
+
+.btn-wa:active{
+    transform:scale(0.98);
+}
+
+.footer{
+    text-align:center;
+    margin-top:25px;
+    font-size:12px;
+    color:#777;
+}
+
+.required{
+    color:red;
+}
+
+@media(max-width:600px){
+
+    body{
+        padding:10px;
+    }
+
+    .container{
+        padding:15px;
+    }
+
+    h1{
+        font-size:22px;
+    }
+
+    .logo img{
+        width:210px;
+    }
+
+    th, td{
+        font-size:12px;
+        padding:8px;
+    }
+
+    input,
+    select,
+    textarea{
+        font-size:14px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="logo">
+
+       <img src="https://i.imgur.com/cYSrBRX.png" alt="Logo HCL">
+
+    </div>
+
+    <h1>DAILY CARE UNIT</h1>
+
+    <label>Tanggal</label>
+    <input type="date" id="tanggal">
+
+    <label>Nama Driver <span class="required">*</span></label>
+    <input type="text" id="operator" placeholder="Masukkan nama driver">
+
+    <label>Plat No / No Lambung <span class="required">*</span></label>
+    <input type="text" id="unit" placeholder="BM xxxx HCL">
+
+    <label>HM / KM</label>
+    <input type="text" id="hm" placeholder="Masukkan HM / KM">
+
+    <label>Lokasi Kerja</label>
+    <input type="text" id="lokasi" placeholder="Lokasi kerja">
+
+    <div class="table-wrapper">
+
+    <table>
+
+        <tr>
+            <th>Item Pemeriksaan</th>
+            <th>Kondisi</th>
+        </tr>
+
+        <tr>
+            <td>BAN, VELG & BAUT RODA</td>
+            <td>
+                <select id="ban">
+                    <option>OK</option>
+                    <option>NOT OK</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>OLI MESIN</td>
+            <td>
+                <select id="oli">
+                    <option>OK</option>
+                    <option>NOT OK</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>AIR RADIATOR</td>
+            <td>
+                <select id="radiator">
+                    <option>OK</option>
+                    <option>NOT OK</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>GREASE & UNDERCARRIAGE</td>
+            <td>
+                <select id="grease">
+                    <option>OK</option>
+                    <option>NOT OK</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>KLAKSON & ALARM</td>
+            <td>
+                <select id="klakson">
+                    <option>OK</option>
+                    <option>NOT OK</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>PANEL KONTROL</td>
+            <td>
+                <select id="panel">
+                    <option>OK</option>
+                    <option>NOT OK</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>BRAKE SYSTEM</td>
+            <td>
+                <select id="brake">
+                    <option>OK</option>
+                    <option>NOT OK</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>LAMPU-LAMPU</td>
+            <td>
+                <select id="lampu">
+                    <option>OK</option>
+                    <option>NOT OK</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>AIR WIPER</td>
+            <td>
+                <select id="wiper">
+                    <option>OK</option>
+                    <option>NOT OK</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>SISTEM 4 WD</td>
+            <td>
+                <select id="wd">
+                    <option>OK</option>
+                    <option>NOT OK</option>
+                </select>
+            </td>
+        </tr>
+
+    </table>
+
+    </div>
+
+    <label>Catatan / Kendala</label>
+
+    <textarea id="catatan" rows="4" placeholder="Isi catatan jika ada"></textarea>
+
+    <button type="button" class="btn-wa" onclick="kirimWA()">
+        📤 Kirim Laporan ke WhatsApp
+    </button>
+
+    <div class="footer">
+        PT. HUTHAMA CAHAYA LANGGENG
+    </div>
+
+</div>
+
+<script>
+
+// AUTO TANGGAL HARI INI
+document.getElementById('tanggal').valueAsDate = new Date();
+
+function kirimWA(){
+
+    let tanggal = document.getElementById('tanggal').value;
+    let operator = document.getElementById('operator').value.trim();
+    let unit = document.getElementById('unit').value.trim();
+    let hm = document.getElementById('hm').value.trim();
+    let lokasi = document.getElementById('lokasi').value.trim();
+    let catatan = document.getElementById('catatan').value.trim();
+
+    // VALIDASI
+    if(operator === ""){
+        alert("Nama Driver wajib diisi!");
+        document.getElementById('operator').focus();
+        return;
+    }
+
+    if(unit === ""){
+        alert("Plat No / No Lambung wajib diisi!");
+        document.getElementById('unit').focus();
+        return;
+    }
+
+    // FORMAT PESAN WA
+let pesan =
+`*DAILY CARE UNIT*
+
+======================
+
+📅 Tanggal : ${tanggal}
+👷 Driver : ${operator}
+🚛 Unit : ${unit}
+⏱️ HM/KM : ${hm || "-"}
+📍 Lokasi : ${lokasi || "-"}
+
+======================
+🔍 HASIL PEMERIKSAAN
+======================
+
+✅ BAN, VELG & BAUT RODA : ${document.getElementById('ban').value}
+✅ OLI MESIN : ${document.getElementById('oli').value}
+✅ AIR RADIATOR : ${document.getElementById('radiator').value}
+✅ GREASE & UNDERCARRIAGE : ${document.getElementById('grease').value}
+✅ KLAKSON & ALARM : ${document.getElementById('klakson').value}
+✅ PANEL KONTROL : ${document.getElementById('panel').value}
+✅ BRAKE SYSTEM : ${document.getElementById('brake').value}
+✅ LAMPU-LAMPU : ${document.getElementById('lampu').value}
+✅ AIR WIPER : ${document.getElementById('wiper').value}
+✅ SISTEM 4WD : ${document.getElementById('wd').value}
+
+======================
+📝 CATATAN
+======================
+
+${catatan || "-"}
+
+🏢 PT. HUTHAMA CAHAYA LANGGENG`;
+    // NOMOR TUJUAN
+    let nomor = "6281270443089";
+
+    // LINK WA
+    let url = `https://wa.me/${nomor}?text=${encodeURIComponent(pesan)}`;
+
+    // LEBIH AMAN UNTUK HP
+    window.location.href = url;
+}
+
+</script>
+
+</body>
+</html>
